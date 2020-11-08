@@ -134,7 +134,7 @@ const RegisterRetailer = () => {
             <h2 className="title">Sign in</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
-              <input  value={vendor_id} onChange={e => onSingIn(e)} name ="vendor_id" type="text" placeholder="Username" />
+              <input  value={vendor_id} onChange={e => onSingIn(e)} name ="Email" type="email" placeholder="Email" />
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
@@ -154,11 +154,11 @@ const RegisterRetailer = () => {
               <input value={vendorEmail} onChange={e => onRegister(e)} name ="vendorEmail" type="email" placeholder="Email" />
             </div>
             <div className="input-field">
-              <i className="fas fa-user"></i>
+            <i class="fa fa-mobile" aria-hidden="true"></i>
               <input value={vendorNumber} onChange={e => onRegister(e)} name ="vendorNumber" type="text" placeholder="Mobile Number" />
             </div>
             <div className="input-field" >
-               <i className="fas fa-user"></i>
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
               <input onChange={e => onRegister(e)} value={vendorAddress}   placeholder= "Address" type="text" name="Address" cols="20" rows="6"></input>
             </div>
             <div className="input-field">
@@ -174,7 +174,7 @@ const RegisterRetailer = () => {
         <div className="panel left-panel">
           <div className="content">
             <h3>New here ?</h3>
-            <button onClick = {() => signUp()} className="btn transparent" id="sign-up-btn">
+            <button onClick = {() => signUp()} style={{margin : "1rem"}} className="btn transparent" id="sign-up-btn">
               Sign up
             </button>
           </div>
@@ -183,7 +183,7 @@ const RegisterRetailer = () => {
         <div className="panel right-panel">
           <div className="content">
             <h3>One of us ?</h3>
-            <button onClick = {() => signIn()}  className="btn transparent" id="sign-in-btn">
+            <button onClick = {() => signIn()}  style={{margin : "1rem"}} className="btn transparent" id="sign-in-btn">
               Sign in
             </button>
           </div>
