@@ -8,9 +8,11 @@ const Dashboardvendor = () => {
 
   const [result,setResult]  = useState([])
   const [show,setShow] = useState(false)
-  
+  const [name,setName] = useState("")
  
   useEffect( ()=>{
+    const vendorName = localStorage.getItem("name");
+    setName(vendorName)
     fetch('http://hackout.herokuapp.com/getAllOrders?vendorId=2334333',{
     }).then(
       res => res.json()
@@ -30,7 +32,7 @@ const Dashboardvendor = () => {
    <SideBar/>
     <div className="mainArea">
       <div className="welcomeHeadText">
-        <h3>Hello! Mohan Welcome </h3>
+        <h3>Welcome {name} !!</h3>
       </div>
       <div className="dashlogo"><img src={dashLogo} alt="dashLogo" /></div>
       <div className="cards">
