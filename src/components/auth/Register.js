@@ -82,6 +82,7 @@ const RegisterRetailer = () => {
         if(res.data.success === true){
           localStorage.setItem('log', true)
           localStorage.setItem('name', registerData.username)
+          notify("Signed Up Successfully")
           setLoggedIn(true)
         }  
       }catch(err){
@@ -102,6 +103,7 @@ const RegisterRetailer = () => {
         if(res.data.success === true){
           localStorage.setItem('log', true)
           localStorage.setItem("name",res.data.name)
+          notify("Signed In Successfully")
           setLoggedIn(true)
         }  
       }catch(err){

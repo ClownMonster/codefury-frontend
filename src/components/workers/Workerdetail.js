@@ -15,7 +15,7 @@ const WorkerDetail = ({match})=>{
   useEffect(async ()=>{
     try{
 
-      const url =`http://69d17dc235e9.ngrok.io/getALabourer?labourerId=${worker_id}`
+      const url =`https://codefury-hack.herokuapp.com/getALabourer?labourerId=${worker_id}`
       const res = await axios.get(url)
       console.log(res.data)
       setWorker(res.data)

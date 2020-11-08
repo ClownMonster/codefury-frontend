@@ -9,7 +9,7 @@ import vlogo from './vcart.svg'
 
 const WorkerList = ()=>{
   const [labourers,setLabourers]  = useState([])
-  const [url,setUrl] = useState("http://69d17dc235e9.ngrok.io/getAllLabourers")
+  const [url,setUrl] = useState("https://codefury-hack.herokuapp.com/getAllLabourers")
   const [show,setShow] = useState(false)
   
 
@@ -29,22 +29,22 @@ const WorkerList = ()=>{
 
     const onclick = (i) => {
       if(i==1){
-        setUrl("http://69d17dc235e9.ngrok.io/getAllLabourers")
+        setUrl("https://codefury-hack.herokuapp.com/getAllLabourers")
       }
       else if(i==2){
-        setUrl("http://69d17dc235e9.ngrok.io/getPlumbers")
+        setUrl("https://codefury-hack.herokuapp.com/getPlumbers")
       }
       else if(i==3){
-        setUrl("http://69d17dc235e9.ngrok.io/getCarpenters")
+        setUrl("https://codefury-hack.herokuapp.com/getCarpenters")
       }else if(i==4){
-        setUrl("http://69d17dc235e9.ngrok.io/getDailyWage")
+        setUrl("https://codefury-hack.herokuapp.com/getDailyWage")
       }else{
-        setUrl("http://69d17dc235e9.ngrok.io/getHomeWorkers") 
+        setUrl("https://codefury-hack.herokuapp.com/getHomeWorkers") 
       }
     }
 
     const onclickCity = (city) => {
-     setUrl(`http://69d17dc235e9.ngrok.io/getWorkersInCity?city=${city}`)
+     setUrl(`https://codefury-hack.herokuapp.com/getWorkersInCity?city=${city}`)
     }
 
 
