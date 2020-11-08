@@ -11,8 +11,7 @@ const Landing = () => {
           <h3>Hello!<br/> Welome to generic</h3>
           <img className="logo" src={logo} alt="Logo" />
           <div className="btns">
-           <Link to="/register"><button className="for-vendor">For Public</button></Link> 
-           <Link to="/register"><button className="for-vendor">For Contractor</button></Link> 
+           <Link to="/register"><button className="for-vendor">Register</button></Link> 
           </div>
           </div>
       </div>

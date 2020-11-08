@@ -79,12 +79,12 @@
     justify-content: center;
     background: linear-gradient(to right bottom,#303F9F,#9575CD);
     color: white;
-    width: 9rem;
-    height: 3.5rem;
-    padding: 1rem 1rem;
-    margin-right: 2rem;
-    border-radius: 6px;
-    cursor: pointer;
+    width: 9rem !important;
+    height: 3.5rem !important;
+    padding: 1rem 1rem !important;
+    margin-right: 2rem !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
     font-family: 'Roboto Slab';
     font-weight: bold;
     transition: ease;
