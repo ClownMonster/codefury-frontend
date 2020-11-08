@@ -8,6 +8,7 @@ import Register from "./components/auth/Register";
 import Dashboard from "./components/dashboard/Dashboard";
 import Landing from "./components/layout/Landing"
 import Workers from "./components/workers/Workerslist"
+import PrivateRoute from "./components/routing/PrivateRoute";
 
 
 
@@ -20,8 +21,8 @@ function App() {
       <section >
         <Switch>
           <Route exact path="/register" component={Register} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/workers" component={Workers} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/workers" component={Workers} />
         </Switch>
       </section>
     </Fragment>

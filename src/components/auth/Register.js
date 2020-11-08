@@ -12,17 +12,15 @@ import 'react-toastify/dist/ReactToastify.css';
 const RegisterRetailer = () => {
 
     const [registerData,setRegisterData] = useState({
-      vendorName:"",
-      vendorId: "",
-      vendorGovRegsNumber: "",
-      vendorPassword:"",
-      vendorAddress:"",
-      vendorEmail:"",
-      vendorNumber: ""
+     username : "",
+     email : "",
+     password : "",
+     address : "",
+     phone : ""
     }) 
 
     const [signInData,setSignInData] = useState({
-      vendor_id  : "",
+      email: "",
       password : ""
     })
 
@@ -60,17 +58,15 @@ const RegisterRetailer = () => {
         });
 
     const signUp = () => { 
-         setForm(true)
-         let id = Math.floor(100000 + Math.random() * 900000)
-         setRegisterData({ ...registerData, vendorId : id })
+         setForm(true) 
    } 
 
    const signIn = () => { 
      setForm(false)
     }
 
-    const {vendorName,vendorAddress, vendorEmail, vendorPassword, vendorGovRegsNumber,vendorNumber} = registerData;
-    const {vendor_id , password} = signInData
+    const {username,email,phone,address,password} = registerData;
+    const {email_id , pass} = signInData
 
     const onRegister = e => setRegisterData({ ...registerData, [e.target.name]: e.target.value })
     const onSingIn = e => setSignInData({ ...signInData, [e.target.name]: e.target.value })
@@ -82,9 +78,8 @@ const RegisterRetailer = () => {
           headers: {
           'content-type': 'application/json'
         }}
-        const res  = await axios.post("#",registerData,config)
+        const res  = await axios.post("http://69d17dc235e9.ngrok.io/signup",registerData,config)
         if(res.data.success === true){
-          localStorage.setItem('vendorId',registerData.vendorId)
           localStorage.setItem('log', true)
           setLoggedIn(true)
         }  
@@ -101,10 +96,9 @@ const RegisterRetailer = () => {
           headers: {
           'content-type': 'application/json'
         }}
-        const res  = await axios.post("#",signInData,config)
+        const res  = await axios.post("http://69d17dc235e9.ngrok.io/login",signInData,config)
         console.log(res)
         if(res.data.success === true){
-          localStorage.setItem('vendorId',signInData.vendor_id)
           localStorage.setItem('log', true)
           setLoggedIn(true)
         }  
@@ -134,11 +128,11 @@ const RegisterRetailer = () => {
             <h2 className="title">Sign in</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
-              <input  value={vendor_id} onChange={e => onSingIn(e)} name ="Email" type="email" placeholder="Email" />
+              <input  value={email_id} onChange={e => onSingIn(e)} name ="email_id" type="email" placeholder="Email" />
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
-              <input value={password} onChange={e => onSingIn(e)} name ="password" type="password" placeholder="Password" />
+              <input value={pass} onChange={e => onSingIn(e)} name ="pass" type="password" placeholder="Password" />
             </div>
             <input type="submit" value="Sign In" className="btn solid" />
           </form>
@@ -147,23 +141,23 @@ const RegisterRetailer = () => {
             <h2 className="title">Sign up</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
-              <input value={vendorName} onChange={e => onRegister(e)} name ="vendorName" type="text" placeholder="User Name" />
+              <input value={username} onChange={e => onRegister(e)} name ="username" type="text" placeholder="User Name" />
             </div>
             <div className="input-field">
               <i className="fas fa-envelope"></i>
-              <input value={vendorEmail} onChange={e => onRegister(e)} name ="vendorEmail" type="email" placeholder="Email" />
+              <input value={email} onChange={e => onRegister(e)} name ="email" type="email" placeholder="Email" />
             </div>
             <div className="input-field">
             <i class="fa fa-mobile" aria-hidden="true"></i>
-              <input value={vendorNumber} onChange={e => onRegister(e)} name ="vendorNumber" type="text" placeholder="Mobile Number" />
+              <input value={phone} onChange={e => onRegister(e)} name ="phone" type="text" placeholder="Mobile Number" />
             </div>
             <div className="input-field" >
             <i class="fa fa-map-marker" aria-hidden="true"></i>
-              <input onChange={e => onRegister(e)} value={vendorAddress}   placeholder= "Address" type="text" name="Address" cols="20" rows="6"></input>
+              <input onChange={e => onRegister(e)} value={address}   placeholder= "Address" type="text" name="address" cols="20" rows="6"></input>
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
-              <input value={vendorPassword} onChange={e => onRegister(e)} name ="vendorPassword" type="password" placeholder="Password" />
+              <input value={password} onChange={e => onRegister(e)} name ="password" type="password" placeholder="Password" />
             </div>
             <input  type="submit" className="btn" value="Sign up" />
           </form>
