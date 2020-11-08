@@ -6,8 +6,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Register from "./components/auth/Register";
 import Dashboard from "./components/dashboard/Dashboard";
-import Landing from "./components/layout/Landing"
-import Workers from "./components/workers/Workerslist"
+import Landing from "./components/layout/Landing";
+import Workers from "./components/workers/Workerslist";
+import WorkerDetail from "./components/workers/Workerdetail";
 import PrivateRoute from "./components/routing/PrivateRoute";
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/workers" component={Workers} />
+          <PrivateRoute exact path="/:id" component={WorkerDetail} />
         </Switch>
       </section>
     </Fragment>

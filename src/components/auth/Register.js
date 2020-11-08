@@ -81,6 +81,7 @@ const RegisterRetailer = () => {
         const res  = await axios.post("http://69d17dc235e9.ngrok.io/signup",registerData,config)
         if(res.data.success === true){
           localStorage.setItem('log', true)
+          localStorage.setItem('name', registerData.username)
           setLoggedIn(true)
         }  
       }catch(err){
@@ -100,6 +101,7 @@ const RegisterRetailer = () => {
         console.log(res)
         if(res.data.success === true){
           localStorage.setItem('log', true)
+          localStorage.setItem("name",res.data.name)
           setLoggedIn(true)
         }  
       }catch(err){
