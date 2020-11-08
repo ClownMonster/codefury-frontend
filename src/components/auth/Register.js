@@ -4,6 +4,8 @@ import registerImg from './images/img1.svg';
 import signInImg from "./images/img2.svg";
 import "./register.css"
 import axios from "axios"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -44,6 +46,19 @@ const RegisterRetailer = () => {
     if(form) {
       divClass.push('sign-up-mode');
     }
+
+   
+
+    const notify =(msg ) =>  toast.info(msg, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: 0,
+        });
+
     const signUp = () => { 
          setForm(true)
          let id = Math.floor(100000 + Math.random() * 900000)
@@ -79,9 +94,7 @@ const RegisterRetailer = () => {
   
 
     const onSignInSubmit =async (e) => {
-      e.preventDefault();
-      try {
-        console.log("hi")
+      try {  
         console.log(signInData)
         e.preventDefault();
         const config = {
@@ -97,12 +110,24 @@ const RegisterRetailer = () => {
         }  
       }catch(err){
         console.error(err)
+        notify("Invaild Credentials")
       }
     }
      
 
   return (
     <div className={divClass.join(" ")}>
+    <ToastContainer
+    position="top-right"
+    autoClose={5000}
+    hideProgressBar
+    newestOnTop={false}
+    closeOnClick
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    />
       <div className="forms-container">
         <div className="signin-signup">
           <form onSubmit = {e => onSignInSubmit(e)} className="sign-in-form">
