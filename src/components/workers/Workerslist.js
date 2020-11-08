@@ -89,7 +89,7 @@ const WorkerList = ()=>{
 <div className="orderCardBox">{ show && labourers.length > 0 ? labourers.map(item =>
     <div className="in" key ={item.workerId}>
     <div>Name : {item.name}</div>
-    <div>Phone No : {item.phone}</div>
+    <div>Work : {item.work}</div>
     <div>Pay/Per Day : {item.perDaySalary}</div>
     <div>Place : {item.place}</div>
     <Link className="viewBtn" to={`/${item.workerId}`}>View</Link></div> ) : <h1>No Labourers Available....</h1>}</div>

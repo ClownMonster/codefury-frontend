@@ -9,8 +9,8 @@
 
 .cd{
    
-    width: 80%;
-    height: 92%;
+    width: 50%;
+    height: 70%;
     border-radius: 10px;
     background: linear-gradient(to right bottom,#1A237E,#9575CD);
     box-shadow: 2px 2px 2px 2px black;
@@ -68,8 +68,8 @@
 
 .cd{
    
-    width: 86% !important;
-    height: 100% !important ;
+    width: 70% !important;
+    height: 90% !important ;
     border-radius: 10px;
     background: linear-gradient(to right bottom,#1A237E,#9575CD);
     box-shadow: 2px 2px 2px 2px black;
@@ -79,7 +79,7 @@
 }
 
 .orderDetailCard{
-    width: 100%;
+    width: 90%;
     height: 100%;
     margin-top: 2rem;
     margin-left: 0.3rem !important;

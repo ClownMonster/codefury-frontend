@@ -27,7 +27,7 @@ const WorkerDetail = ({match})=>{
 
   const invite =async (no) => {
     const name  = localStorage.getItem("name")
-    const body = `your have been invited by ${name} has to follow up more $`
+    const body = `your have been invited by ${name} has to follow up more https://generic-codefury.herokuapp.com/`
     const sms_url = `https://hackout-helpline.herokuapp.com/sendsms?body=${body}&number=${no}`
     const response  = await axios.get(sms_url)
     console.log(response.data)
@@ -42,7 +42,8 @@ const WorkerDetail = ({match})=>{
         <div><h1 className="tt">Name : {worker.name}</h1></div>
         <div><h1 className="tt">Age : {worker.age}</h1></div>
         <div><h1 className="tt">Gender : {worker.gender}</h1></div>
-    <div onClick ={()=> invite(+918384852943)} className="dispatchBtn"><button>Invite</button></div> 
+        <div><h1 className="tt">Phone Number: {worker.phone}</h1></div>
+    <div onClick ={()=> invite(worker.phone)} className="dispatchBtn"><button>Invite</button></div> 
   </div>
         : <h1>Fetching</h1>}
          
