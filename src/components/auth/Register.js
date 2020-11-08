@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import {Redirect} from "react-router-dom";
-// import registerImg from './images/img1.svg';
-// import signInImg from "./images/img2.svg";
+import registerImg from './images/img1.svg';
+import signInImg from "./images/img2.svg";
 import "./register.css"
 import axios from "axios"
 
@@ -109,7 +109,7 @@ const RegisterRetailer = () => {
             <h2 className="title">Sign in</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
-              <input  value={vendor_id} onChange={e => onSingIn(e)} name ="vendor_id" type="text" placeholder="Vendor Id" />
+              <input  value={vendor_id} onChange={e => onSingIn(e)} name ="vendor_id" type="text" placeholder="Username" />
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
@@ -122,11 +122,7 @@ const RegisterRetailer = () => {
             <h2 className="title">Sign up</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
-              <input value={vendorName} onChange={e => onRegister(e)} name ="vendorName" type="text" placeholder="Vendor Name" />
-            </div>
-            <div className="input-field">
-              <i className="fas fa-user"></i>
-              <input value={vendorGovRegsNumber} onChange={e => onRegister(e)} name ="vendorGovRegsNumber" type="text" placeholder="Govt Reg No" />
+              <input value={vendorName} onChange={e => onRegister(e)} name ="vendorName" type="text" placeholder="User Name" />
             </div>
             <div className="input-field">
               <i className="fas fa-envelope"></i>
@@ -138,7 +134,7 @@ const RegisterRetailer = () => {
             </div>
             <div className="input-field" >
                <i className="fas fa-user"></i>
-              <input onChange={e => onRegister(e)} value={vendorAddress}   placeholder= "Address" type="text" name="vendorAddress" cols="20" rows="6"></input>
+              <input onChange={e => onRegister(e)} value={vendorAddress}   placeholder= "Address" type="text" name="Address" cols="20" rows="6"></input>
             </div>
             <div className="input-field">
               <i className="fas fa-lock"></i>
@@ -157,7 +153,7 @@ const RegisterRetailer = () => {
               Sign up
             </button>
           </div>
-          <img src={""} className="image" alt="" />
+          <img src={registerImg} className="image" alt="" />
         </div>
         <div className="panel right-panel">
           <div className="content">
@@ -166,7 +162,7 @@ const RegisterRetailer = () => {
               Sign in
             </button>
           </div>
-          <img src={""} className="image" alt="" />
+          <img src={signInImg} className="image" alt="" />
         </div>
       </div>
     </div>
