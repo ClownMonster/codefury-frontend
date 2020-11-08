@@ -98,6 +98,24 @@
 
 }
 
+.btn2, .btn2:hover{
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-top:2rem;
+    width: 13rem;
+    padding: 0.7rem 0.5rem;
+    outline: none;
+    background-color: black;
+    color:white;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px 2px black;
+    
+}
+
+
 .cards{
     margin-top: 2rem;
     width: 100%;
@@ -186,6 +204,11 @@
     box-shadow: none; 
 }
 
+.bb-box{
+    display: flex;
+    flex-direction: row;
+}
+
 
 .viewBtn:hover{
     display: flex;
@@ -219,6 +242,25 @@
         
     }
     
+
+.btn2, .btn2:hover{
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
+    margin-top:2rem;
+    width: 10rem;
+    font-size: 15px;
+    padding: 0.7rem 0.5rem;
+    outline: none;
+    background-color: black;
+    color:white;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px 2px black;
+    
+}
+
 
 
 }

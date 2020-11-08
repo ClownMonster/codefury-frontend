@@ -3,17 +3,13 @@ import './dashboard.css';
 import dashLogo from './dashboard.svg';
 import SideBar from "../layout/SideBar";
 
-  import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-
 const Dashboardvendor = () => {
 
 
   const [result,setResult]  = useState([])
   const [show,setShow] = useState(false)
   
-  const notify = () => toast("Wow so easy !");
-
+ 
   useEffect( ()=>{
     fetch('http://hackout.herokuapp.com/getAllOrders?vendorId=2334333',{
     }).then(
@@ -49,8 +45,7 @@ const Dashboardvendor = () => {
         <div className="orderProcessed">
           <h3>Invited</h3>
           <h3>18</h3>
-          <button onClick={notify}>click Me</button>
-          <ToastContainer />
+        
         </div>
       </div>
     </div>
