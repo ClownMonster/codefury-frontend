@@ -169,8 +169,8 @@
 }
 
 .in{
-    padding:0.2rem;
-    width: 70%;
+    padding:0.5rem;
+    width: 80%;
     margin-bottom: 2rem;
     background: linear-gradient(to right bottom,#1A237E,#9575CD);
     background: #1d257a;
@@ -184,6 +184,7 @@
     font-size: 18px;
     font-family: 'Roboto Slab';
     cursor: pointer;
+    height: max-content;
 
     
 }
@@ -194,6 +195,7 @@
 
 
 .viewBtn{
+    margin-left: 0.4rem;
     display: flex;
     justify-content: center;
     color: white;
@@ -235,7 +237,7 @@
         color: white;
         box-shadow: 2px 2px 2px 2px black;
         border-radius: 9px;
-        font-size: 15px !important; 
+        font-size: 12px !important; 
         font-family: 'Roboto Slab';
         cursor: pointer;
     
