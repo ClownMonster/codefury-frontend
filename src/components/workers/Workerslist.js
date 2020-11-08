@@ -8,13 +8,8 @@ import vlogo from './vcart.svg'
 
 
 const WorkerList = ()=>{
-
-  const [showCarepenter,setShowCarpenter] = useState(false)
-  const [showPlumber,setShowPlumber] = useState(false)
-  const [showDaily,setShowDaily] = useState(false)
-  const [showHouse,setShowHouse] = useState(false)
-
   const [labourers,setLabourers]  = useState([])
+  const [url,setUrl] = useState("http://69d17dc235e9.ngrok.io/getAllLabourers")
   const [show,setShow] = useState(false)
   
 
@@ -22,9 +17,7 @@ const WorkerList = ()=>{
 
   useEffect(async ()=>{
     try{
-      // const vendorId = localStorage.getItem("vendorId");
-      // console.log(vendorId)
-      const url  = `http://69d17dc235e9.ngrok.io/getAllLabourers`
+
       const res  = await axios.get(url)
       console.log(res.data)
       setLabourers(res.data)
@@ -32,7 +25,28 @@ const WorkerList = ()=>{
     }catch(err){
       console.error(err)
     }
-    },[] )
+    },[url] )
+
+    const onclick = (i) => {
+      if(i==1){
+        setUrl("http://69d17dc235e9.ngrok.io/getAllLabourers")
+      }
+      else if(i==2){
+        setUrl("http://69d17dc235e9.ngrok.io/getPlumbers")
+      }
+      else if(i==3){
+        setUrl("http://69d17dc235e9.ngrok.io/getCarpenters")
+      }else if(i==4){
+        setUrl("http://69d17dc235e9.ngrok.io/getDailyWage")
+      }else{
+        setUrl("http://69d17dc235e9.ngrok.io/getHomeWorkers") 
+      }
+    }
+
+    const onclickCity = (city) => {
+     setUrl(`http://69d17dc235e9.ngrok.io/getWorkersInCity?city=${city}`)
+    }
+
 
  
 
@@ -42,15 +56,43 @@ const WorkerList = ()=>{
       <SideBar/>
     <div className="mainArea">
         <div className="vlogo"><img src={vlogo}  alt="vlogo" /></div>
-  <div className="orderCardBox">{ show && labourers.length > 0 ? labourers.map(item =>
+
+<div className="bb-box">
+  <div className="dropdown">
+    <button class="btn2 btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Select Category
+    </button>
+  <div style={{background:'white', cursor:'pointer'}} className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a onClick = {() => onclick(1)} className="dropdown-item" href>All Labourers</a>
+    <a onClick = {() => onclick(2)} className="dropdown-item" href>Plumbers</a>
+    <a onClick = {() => onclick(3)}className="dropdown-item" href>Carpenters</a>
+    <a onClick = {() => onclick(4)} className="dropdown-item" href>DailyWage Workers</a>
+    <a onClick = {() => onclick(5)} className="dropdown-item" href>Home Workers</a>
+  </div>
+
+</div>
+
+ <div className="dropdown">
+    <button class="btn2 btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Select Region
+    </button>
+  <div style={{background:'white', cursor:'pointer'}} className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a onClick = {() => onclickCity("Bangalore")} className="dropdown-item" href>Bangalore</a>
+    <a onClick = {() => onclickCity("Chennai")} className="dropdown-item" href>Chennai</a>
+    <a onClick = {() => onclickCity("Mumbai")} className="dropdown-item" href>Mumbai</a>
+    <a onClick = {() => onclickCity("Delhi")} className="dropdown-item" href>Delhi</a>
+
+  </div>
+</div>  
+</div>
+
+<div className="orderCardBox">{ show && labourers.length > 0 ? labourers.map(item =>
     <div className="in" key ={item.workId}>
     <div>Name : {item.name}</div>
     <div>Phone No : {item.phone}</div>
     <div>Pay/Per Day : {item.perDaySalary}</div>
     <div>Place : {item.place}</div>
-    <Link className="viewBtn" to={`/${item.workId}`}>View</Link>
-
-  </div>) : ""}</div>
+    <Link className="viewBtn" to={`/${item.workId}`}>View</Link></div> ) : <h1>No Labourers Available....</h1>}</div>
     </div>
     </div>
   );
@@ -58,4 +100,6 @@ const WorkerList = ()=>{
 }
 
 
-export default WorkerList;
+export default WorkerList
+
+
